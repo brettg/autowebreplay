@@ -39,18 +39,19 @@ module Autowebreplay
   end
 end
 
+# need this to populate cache in first place
 WebMock.allow_net_connect!
+
 WebMock.after_request(:real_requests_only => true)  do |request_signature, response|
   Autowebreplay.save(request_signature, response)
 end
 
 lookup_response = lambda do |request_signature|
   if resp = Autowebreplay.lookup(request_signature)
-    hahs = [:headers, :body, :status, :exception].inject({}) do |h, prop|
+    [:headers, :body, :status, :exception].inject({}) do |h, prop|
       h[prop] = resp.send(prop)
       h
     end
-    hahs
   end
 end
 
