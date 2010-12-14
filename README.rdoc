@@ -1,0 +1,18 @@
+= autowebreplay
+Automatic replay of HTTP requests to keep tests fast and not externally dependent with the goal of keeping the API to just one require statement. 
+
+== Usage
+Add
+  require 'autowebreplay'
+and all responses get cached to disk. Once saved all subsequent identical requests will use the version on disk. 
+
+A cache directory (.autowebreplay) gets created in the current working directory. Delete the cache directory to clear the cache. 
+
+It's essentially a thin wrapper on webmock[https://github.com/bblimke/webmock] so it supports all the same HTTP libraries.
+
+---
+
+If you're looking for more customized HTTP request playback vcr[https://github.com/myronmarston/vcr] looks worth a try. 
+
+== Thanks
+webmock[https://github.com/bblimke/webmock]!!!
