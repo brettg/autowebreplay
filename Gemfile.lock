@@ -7,9 +7,9 @@ PATH
 GEM
   remote: http://rubygems.org/
   specs:
-    addressable (2.2.2)
+    addressable (2.2.4)
     crack (0.1.8)
-    webmock (1.6.1)
+    webmock (1.6.2)
       addressable (>= 2.2.2)
       crack (>= 0.1.7)
 
@@ -19,4 +19,3 @@ PLATFORMS
 DEPENDENCIES
   autowebreplay!
   bundler
-  webmock (>= 1.6.1)
